@@ -19,3 +19,22 @@ S의 길이는 100을 넘지 않는다.
 출력
 첫째 줄에 S를 ROT13으로 암호화한 내용을 출력한다.
 '''
+
+S = input() 
+result = '' 
+
+for s in S: 
+    if 'a' <= s <= 'z': 
+        s = ord(s)+13 
+        if s > 122: 
+            s -= 26 
+        result += chr(s) 
+    elif 'A' <= s <= 'Z': 
+        s = ord(s) + 13 
+        if s > 90: 
+            s -= 26 
+        result += chr(s) 
+    else:
+        result += s
+        
+print(result)
